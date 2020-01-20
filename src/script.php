@@ -42,13 +42,16 @@ if(is_array($csvRowsData)) {
             $discount
         );
     }
+	$operations = $operation->getAll();
 }
 
-$operations = $operation->getAll();
+
 
 // Calculate commission for operations.
-foreach ($operations as $operation) {
-    $commissionCalculator->calculate($operation);
+if(is_array($operations)) {
+    foreach ($operations as $operation) {
+        $commissionCalculator->calculate($operation);
 
-    fwrite(STDOUT, $commissionCalculator->getFormattedCommission($operation) . PHP_EOL);
+        fwrite(STDOUT, $commissionCalculator->getFormattedCommission($operation) . PHP_EOL);
+    }
 }
