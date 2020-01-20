@@ -18,7 +18,10 @@ class Data
 				 exit;
 			} 
             return $csvRowsData; 
-        }
+        } else {
+			echo 'Incorrect param';
+			exit;
+		}
     }
 
 	public function hasEmptyField(array $csvRowsData)
