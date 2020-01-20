@@ -45,8 +45,6 @@ if(is_array($csvRowsData)) {
 	$operations = $operation->getAll();
 }
 
-
-
 // Calculate commission for operations.
 if(is_array($operations)) {
     foreach ($operations as $operation) {
